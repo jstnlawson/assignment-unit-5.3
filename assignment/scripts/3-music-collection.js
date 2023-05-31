@@ -14,8 +14,22 @@ function addToCollection(recordToAdd) {
 let albumOne = {
     title: 'The End of Donnie',
     artist: 'The Donnie Haters',
-    year: 1979
-}
+    year: 1979,
+    tracks: [
+        {
+            name: 'Donnie Been Acting Strange',
+            duration: 3.37
+        },
+        {
+            name: 'Who Took My Sandwich',
+            duration: 2.57
+        },
+        {
+            name: "Crumbs on Donnie's Face",
+            duration: 4.45
+        }, 
+    ]
+};
 addToCollection(albumOne);
 console.log(collection);
 // - Test the `addToCollection` function:
@@ -115,17 +129,20 @@ let albumEight = {
 addToCollection(albumEight);
 console.log(collection);
 
+
+
 function search(artist, year) {
     let titleArray = [];
        for (let i = 0; i < collection.length; i++) {
-        if (collection[i].artist === artist && collection[i].year === year) {
+        if (collection[i].artist === artist || collection[i].year === year) {
             titleArray.push(collection[i].title)
         }
     }
         return titleArray;
 }
 
-console.log(search('Ray Charles', 1957));
+console.log(search('Ray Charles', 1957, ''));
+
 // - Add an array of `tracks` to your album objects. Each track should have a `name` and `duration`. You will need to update the functions to support this new property:
 //   - Update the `addToCollection` function to also take an input parameter for the array of tracks.
 //   - Update `search` to allow a `trackName` search criteria. 
