@@ -134,7 +134,7 @@ console.log(collection);
 function search(artist, year) {
     let titleArray = [];
        for (let i = 0; i < collection.length; i++) {
-        if (collection[i].artist === artist || collection[i].year === year) {
+        if (collection[i].artist === artist && collection[i].year === year) {
             titleArray.push(collection[i].title)
         }
     }
@@ -142,7 +142,7 @@ function search(artist, year) {
 }
 
 console.log(search('Ray Charles', 1957, ''));
-
+console.log(search());
 // - Add an array of `tracks` to your album objects. Each track should have a `name` and `duration`. You will need to update the functions to support this new property:
 //   - Update the `addToCollection` function to also take an input parameter for the array of tracks.
 //   - Update `search` to allow a `trackName` search criteria. 
